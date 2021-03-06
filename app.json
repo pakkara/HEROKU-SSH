@@ -4,7 +4,6 @@
   "repository": "https://github.com/developeranaz/HiChat",
   "keywords": ["privatechat", "Chatroom", "Herokuchatroom", "easy", "nodejs", "free"],
   "builpacks": [
-    { "url": "heroku/nodejs" },
     { "url": "https://github.com/dockhero/heroku-buildpack-docker-compose.git" }
   ]
 }
