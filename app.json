@@ -6,4 +6,5 @@
   "builpacks": [
     { "url": "https://github.com/dockhero/heroku-buildpack-docker-compose.git" }
   ]
+  "stack": "container"
 }
