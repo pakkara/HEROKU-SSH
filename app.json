@@ -1,7 +1,7 @@
 {
-  "name": "He-Chat-Heroku",
-  "description": "A Public ChatRoom",
-  "repository": "https://github.com/developeranaz/HiChat",
+  "name": "Heroku SSH",
+  "description": "A Public SSH",
+  "repository": "https://github.com/xVoldx/HEROKU-SSH",
   "keywords": ["privatechat", "Chatroom", "Herokuchatroom", "easy", "nodejs", "free"],
   "builpacks": [
     { "url": "https://github.com/dockhero/heroku-buildpack-docker-compose.git" }
