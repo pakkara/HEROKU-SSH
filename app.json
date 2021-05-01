@@ -1,10 +1,14 @@
 {
   "name": "Heroku SSH",
-  "description": "A Public SSH",
-  "repository": "https://github.com/xVoldx/HEROKU-SSH",
-  "keywords": ["privatechat", "Chatroom", "Herokuchatroom", "easy", "nodejs", "free"],
+  "description": "A SSH using Docker.",
+  "keywords": [
+    "nginx",
+    "index"
+  ],
   "builpacks": [
     { "url": "https://github.com/dockhero/heroku-buildpack-docker-compose.git" }
-  ]
+  ],
+  "repository": "https://github.com/xVoldx/heroku-jupyter-BETA",
   "stack": "container"
+  
 }
