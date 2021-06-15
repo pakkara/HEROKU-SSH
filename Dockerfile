@@ -4,13 +4,16 @@ FROM heroku/heroku:20-build
 RUN curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
 
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
-RUN curl https://rclone.org/install.sh | sudo bash
+
 ENV APP_HOME /app  
 RUN mkdir $APP_HOME  
 WORKDIR $APP_HOME
 
 RUN mkdir -p /opt/heroku
-
+#Install Rclone
+RUN wget https://downloads.rclone.org/v1.55.1/rclone-v1.55.1-linux-amd64.deb
+RUN dpkg -i rclone-v1.55.1-linux-amd64.deb
+RUN rm rclone-v1.55.1-linux-amd64.deb
 # Install python and pip
 RUN apt-get -y install python3 python3-pip bash && apt-get update
 ADD ./webapp/requirements.txt /tmp/requirements.txt
