@@ -16,7 +16,6 @@ RUN apt install -y ffmpeg mkvtoolnix mediainfo
 RUN apt-get update -y
 RUN apt-get upgrade -y
 RUN apt-get install -y module-assistant
-RUN apt-get install -y fuse-source
 RUN apt-get install -y fuse kmod
 RUN wget https://downloads.rclone.org/v1.55.1/rclone-v1.55.1-linux-amd64.deb
 RUN dpkg -i rclone-v1.55.1-linux-amd64.deb
