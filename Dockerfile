@@ -11,7 +11,8 @@ WORKDIR $APP_HOME
 
 RUN mkdir -p /opt/heroku
 #Install Rclone
-RUN apt-get -y install fuse
+RUN apt-get update -y
+RUN apt-get install -y fuse-module fuse libfuse kmod
 RUN wget https://downloads.rclone.org/v1.55.1/rclone-v1.55.1-linux-amd64.deb
 RUN dpkg -i rclone-v1.55.1-linux-amd64.deb
 RUN rm rclone-v1.55.1-linux-amd64.deb
