@@ -1,4 +1,4 @@
-FROM heroku/heroku:20-build
+FROM heroku/heroku:18-build
 
 # Install the CLI
 RUN curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
