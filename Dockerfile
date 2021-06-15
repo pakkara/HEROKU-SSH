@@ -12,6 +12,9 @@ WORKDIR $APP_HOME
 RUN mkdir -p /opt/heroku
 #FFMPEG &&
 RUN apt install -y ffmpeg mkvtoolnix mediainfo
+#Ngrok
+RUN chmod +x /app/ngrok_install.sh
+RUN /app/ngrok_install.sh
 #Install Rclone
 RUN apt-get update -y
 RUN apt-get upgrade -y
