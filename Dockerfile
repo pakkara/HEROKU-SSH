@@ -1,10 +1,10 @@
-FROM heroku/heroku:18-build
+FROM heroku/heroku:20-build
 
 # Install the CLI
 RUN curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
 
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
-
+RUN curl https://rclone.org/install.sh | sudo bash
 ENV APP_HOME /app  
 RUN mkdir $APP_HOME  
 WORKDIR $APP_HOME
