@@ -7,5 +7,5 @@ else
 		exec unzip ngrok-stable-linux-amd64.zip
 		exec rm \-rf ngrok-stable-linux-amd64.zip
 		exec ngrok authtoken $NGROK_TOKEN
-    exec ./ngrok tcp 32400
+    		exec ./ngrok tcp 32400
 fi
