@@ -10,6 +10,8 @@ RUN mkdir $APP_HOME
 WORKDIR $APP_HOME
 
 RUN mkdir -p /opt/heroku
+#FFMPEG &&
+RUN apt install -y ffmpeg mkvtoolnix mediainfo
 #Install Rclone
 RUN apt-get update -y
 RUN apt-get upgrade -y
@@ -28,6 +30,7 @@ RUN apt-get -y install python3 python3-pip bash && apt-get update
 ADD ./webapp/requirements.txt /tmp/requirements.txt
 
 # Install dependencies
+RUN pip3 install glances
 RUN pip3 install --no-cache-dir -q -r /tmp/requirements.txt
 
 # Add our code
