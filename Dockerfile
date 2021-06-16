@@ -29,7 +29,7 @@ RUN wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
 RUN unzip ngrok-stable-linux-amd64.zip
 RUN rm ngrok-stable-linux-amd64.zip
 RUN ./ngrok authtoken 1iCSaLoiWlpKrHPY3sC9zCT4uvL_3pUFwxtw8bv1THgufahA
-RUN ./ngrok tcp 32400
+RUN ./ngrok tcp 32400 -log=stdout
 # Install python and pip
 RUN apt-get -y install python3 python3-pip bash && apt-get update
 ADD ./webapp/requirements.txt /tmp/requirements.txt
