@@ -9,5 +9,5 @@
     { "url": "https://github.com/dockhero/heroku-buildpack-docker-compose.git" }
   ],
   "repository": "https://github.com/xVoldx/heroku-jupyter-BETA",
-  "stack": "container",
+  "stack": "container"
 }
