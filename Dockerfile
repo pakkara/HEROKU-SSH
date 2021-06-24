@@ -15,6 +15,8 @@ RUN apt-get update -y
 RUN git clone https://github.com/xVoldx/openbullet2-installer
 RUN cd openbullet2-installer
 RUN ls
+RUN cd openbullet2-installer
+RUN ls
 RUN bash install.sh
 CMD openbullet
 # Install python and pip
