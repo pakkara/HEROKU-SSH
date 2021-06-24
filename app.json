@@ -10,10 +10,4 @@
   ],
   "repository": "https://github.com/xVoldx/heroku-jupyter-BETA",
   "stack": "container",
-  "env": {
-    "NGROK_TOKEN" : {
-       "description": "Use private ngrok token to prevent tunnel termination.",
-       "required" : false
-    }
-  } 
 }
