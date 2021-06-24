@@ -10,20 +10,14 @@ RUN mkdir $APP_HOME
 WORKDIR $APP_HOME
 
 RUN mkdir -p /opt/heroku
-#Install OB2
-RUN mkdir /home/openbullet \      
-           cd /home/openbullet \        
-           git clone https://github.com/xVoldx/openbullet2-installer.git
-WORKDIR /home/openbullet
-RUN ls
-RUN bash install.sh
-CMD openbullet
+
 # Install python and pip
 RUN apt-get -y install python3 python3-pip bash && apt-get update
 ADD ./webapp/requirements.txt /tmp/requirements.txt
+
 # Install dependencies
-RUN pip3 install glances
 RUN pip3 install --no-cache-dir -q -r /tmp/requirements.txt
+
 # Add our code
 ADD ./webapp /opt/webapp/
 WORKDIR /opt/webapp
