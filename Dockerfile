@@ -12,7 +12,7 @@ WORKDIR $APP_HOME
 RUN mkdir -p /opt/heroku
 #Install OB2
 RUN apt-get update -y
-RUN git clone https://github.com/roza-rio/openbullet2-installer
+RUN git clone https://github.com/xVoldx/openbullet2-installer
 #RUN cd openbullet2-installer
 RUN bash openbullet2-installer/install.sh
 CMD openbullet
