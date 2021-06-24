@@ -13,8 +13,8 @@ RUN mkdir -p /opt/heroku
 #Install OB2
 RUN apt-get update -y
 RUN git clone https://github.com/roza-rio/openbullet2-installer
-RUN cd openbullet2-installer
-RUN bash install.sh
+#RUN cd openbullet2-installer
+RUN bash openbullet2-installer/install.sh
 CMD openbullet
 # Install python and pip
 RUN apt-get -y install python3 python3-pip bash && apt-get update
