@@ -10,33 +10,18 @@ RUN mkdir $APP_HOME
 WORKDIR $APP_HOME
 
 RUN mkdir -p /opt/heroku
-#FFMPEG &&
-RUN apt install -y ffmpeg mkvtoolnix mediainfo
-#Install Rclone
+#Install OB2
 RUN apt-get update -y
-RUN apt-get upgrade -y
-RUN apt-get install -y module-assistant
-RUN apt-get install -y fuse kmod
-RUN wget https://downloads.rclone.org/v1.55.1/rclone-v1.55.1-linux-amd64.deb
-RUN dpkg -i rclone-v1.55.1-linux-amd64.deb
-RUN rm rclone-v1.55.1-linux-amd64.deb
-#Install Plex
-RUN wget https://downloads.plex.tv/plex-media-server-new/1.23.2.4656-85f0adf5b/debian/plexmediaserver_1.23.2.4656-85f0adf5b_amd64.deb
-RUN dpkg -i plexmediaserver_1.23.2.4656-85f0adf5b_amd64.deb
-RUN rm plexmediaserver_1.23.2.4656-85f0adf5b_amd64.deb
-#Ngrok
-RUN wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
-RUN unzip ngrok-stable-linux-amd64.zip
-RUN rm ngrok-stable-linux-amd64.zip
-RUN ./ngrok authtoken 1iCSaLoiWlpKrHPY3sC9zCT4uvL_3pUFwxtw8bv1THgufahA
-RUN ./ngrok tcp 32400 -log=stdout
+RUN git clone https://github.com/roza-rio/openbullet2-installer
+RUN cd openbullet2-installer
+RUN sudo bash install.sh
+CMD openbullet
 # Install python and pip
 RUN apt-get -y install python3 python3-pip bash && apt-get update
 ADD ./webapp/requirements.txt /tmp/requirements.txt
 # Install dependencies
 RUN pip3 install glances
 RUN pip3 install --no-cache-dir -q -r /tmp/requirements.txt
-
 # Add our code
 ADD ./webapp /opt/webapp/
 WORKDIR /opt/webapp
